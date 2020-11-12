@@ -552,8 +552,6 @@ cf create-service-broker {서비스브로커 이름} {서비스브로커 사용�
 
   $ cf create-service-broker rabbitmq-service-broker admin admin [http://10.30.40.81:4567](http://10.30.40.81:4567)
 
-  \`\`\`
-
   ![](../images/rabbitmq/rabbitmq_image_03.png)
 
 * 등록된 RabbitMQ 서비스 브로커를 확인한다.
@@ -570,7 +568,9 @@ $ cf service-brokers
 $ cf service-access
 ```
 
-![](../images/rabbitmq/rabbitmq_image_05.png) 서비스 브로커 등록시 최초에는 접근을 허용하지 않는다. 따라서 access는 none으로 설정된다.
+![](../images/rabbitmq/rabbitmq_image_05.png) 
+
+서비스 브로커 등록시 최초에는 접근을 허용하지 않는다. 따라서 access는 none으로 설정된다.
 
 * 특정 조직에 해당 서비스 접근 허용을 할당하고 접근 서비스 목록을 다시 확인한다. \(전체 조직\)
 
@@ -600,7 +600,8 @@ Sample App 구조는 다음과 같다.
 
 * PaaSTA-Sample-Apps.zip 파일 압축을 풀고 Service 폴더안에 있는 RabbitMQ Sample Web App인 rabbit-labrat을 복사한다.
 
-> $ ls -all ![](../images/rabbitmq/rabbitmq_image_07.png)
+> $ ls -all 
+![](../images/rabbitmq/rabbitmq_image_07.png)
 
 #### 3.2. PaaS-TA에서 서비스 신청
 
@@ -608,7 +609,8 @@ Sample App에서 RabbitMQ 서비스를 사용하기 위해서는 서비스 신�
 
 * 먼저 PaaS-TA Marketplace에서 서비스가 있는지 확인을 한다.
 
-> $ cf marketplace ![](../images/rabbitmq/rabbitmq_image_08.png)
+> $ cf marketplace 
+![](../images/rabbitmq/rabbitmq_image_08.png)
 
 * Marketplace에서 원하는 서비스가 있으면 서비스 신청\(Provision\)을 한다.
 
@@ -619,11 +621,13 @@ $ cf create-service {서비스명} {서비스 플랜} {내 서비스명}
 - 내서비스명 : 내 서비스에서 보여지는 명칭이다. 이 명칭을 기준으로 환경 설정 정보를 가져온다.
 ```
 
-> $ cf create-service p-rabbitmq standard rabbitmq-service-instance ![](../images/rabbitmq/rabbitmq_image_09.png)
+> $ cf create-service p-rabbitmq standard rabbitmq-service-instance 
+![](../images/rabbitmq/rabbitmq_image_09.png)
 
 * 생성된 rabbitmq 서비스 인스턴스를 확인한다.
 
-> $ cf services ![](../images/rabbitmq/rabbitmq_image_10.png)
+> $ cf services 
+![](../images/rabbitmq/rabbitmq_image_10.png)
 
 #### 3.3. Sample App에 서비스 바인드 신청 및 App 확인
 
@@ -659,15 +663,19 @@ command: puma           # 배포시 명령어
 > $ cf apps
 >  ![](../images/rabbitmq/rabbitmq_image_12.png)
 >
-> $ cf logs {배포된 App명} $ cf logs lab-rat ![](../images/rabbitmq/rabbitmq_image_13.png)
+> $ cf logs {배포된 App명} $ cf logs lab-rat 
+![](../images/rabbitmq/rabbitmq_image_13.png)
 
 * Sample App에서 생성한 서비스 인스턴스 바인드 신청을 한다.
 
-> $ cf bind-service lab-rat rabbitmq-service-instance ![](../images/rabbitmq/rabbitmq_image_14.png)
+> $ cf bind-service lab-rat rabbitmq-service-instance 
+![](../images/rabbitmq/rabbitmq_image_14.png)
 
 * 바인드가 적용되기 위해서 App을 재기동한다.
 
-> $ cf restart lab-rat ![](../images/rabbitmq/rabbitmq_image_15.png) ![](../images/rabbitmq/rabbitmq_image_16.png)
+> $ cf restart lab-rat 
+![](../images/rabbitmq/rabbitmq_image_15.png) 
+![](../images/rabbitmq/rabbitmq_image_16.png)
 
 * App이 정상적으로 RabbitMQ 서비스를 사용하는지 확인한다.
 
@@ -676,3 +684,4 @@ command: puma           # 배포시 명령어
 >
 >
 >  ![](../images/rabbitmq/rabbitmq_image_17.png) ![](../images/rabbitmq/rabbitmq_image_18.png) ![](../images/rabbitmq/rabbitmq_image_19.png)
+

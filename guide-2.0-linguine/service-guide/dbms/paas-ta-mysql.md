@@ -1585,7 +1585,9 @@ resource_pools:                               # 배포시 사용하는 resource 
 * MySQL 서비스팩을 배포한다.
 
 > $ bosh deploy
->  ※ 40분 ~ 1시간 정도 소요된다. ![](../images/mysql/update_mysql_vsphere_49.png) ![](../images/mysql/update_mysql_vsphere_50.png)
+>  ※ 40분 ~ 1시간 정도 소요된다. 
+![](../images/mysql/update_mysql_vsphere_49.png) 
+![](../images/mysql/update_mysql_vsphere_50.png)
 
 * 배포된 MySQL 서비스팩을 확인한다.
 
@@ -1797,7 +1799,8 @@ path: target/hello-spring-mysql-1.0.0-BUILD-SNAPSHOT.war      #배포하는 App 
 >
 > ![](../images/mysql/update_mysql_vsphere_33.png)
 >
-> 브라우져에서 확인 ![](../images/mysql/update_mysql_vsphere_34.png)
+> 브라우져에서 확인 
+![](../images/mysql/update_mysql_vsphere_34.png)
 
 ## 4. MySQL Client 툴 접속
 
@@ -1893,3 +1896,4 @@ HeidiSQL 프로그램은 무료로 사용할 수 있는 오픈소스 소프트�
 > 쿼리문에 이상이 없다면 정상적으로 결과를 얻을 수 있을 것이다.
 >
 > ![](../images/mysql/mysql_vsphere_4.1.17.png)
+

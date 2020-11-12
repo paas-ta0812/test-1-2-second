@@ -1,36 +1,36 @@
 # Table of Contents
 
-1. [개요](#1-개요)	
-	-	1.1. [문서 목적](#11-문서-목적)	
-	-	1.2. [범위](#12-범위)	
-	-	1.3. [참고자료](#13-참고자료)	
-2. [Prerequisites](#2-prerequisites)	
-	-	2.1. [개요](#21-개요)		
-	-	2.2. [AWS](#22-aws)		
-		-	2.2.1. [Dashboard(Console)](#221-dashboard(consol))	
-		-	2.2.2. [Security Group](#222-security-group)	
-	-	2.3. [Bosh Server 및 Bosh CLI](#23-bosh-server-및-bosh-cli)	
-	-	2.4. [DNS Server](#24-dns-server)	
-	-	2.5. [OP CLI](#25-op-cli)	
-3. [Open PaaS Controller 설치](#3-open-paas-controller-설치)	
-	-	3.1. [Release Upload](#31-release-upload)	
-	-	3.2. [Stemcell Upload](#32-stemcell-upload)		
-	-	3.3. [Deployment Manifest](#33-depoyment-manifest)	
-		-	3.3.1. [Name & Release](#331-name-&-release)		
-		-	3.3.2. [Networks](#332-networks)	
-		-	3.3.3. [Compilation](#333-compilation)	
-		-	3.3.4. [Resource Pools](#334-resource-pools)	
-		-	3.3.5. [Update](#335-update)	
-		-	3.3.6. [Jobs](#336-jobs)	
-		-	3.3.7. [Properties](#337-properties)	
-	-	3.4. [Bosh Deploy](#34-bosh-deploy)		
-		-	3.4.1. [Deployment Manifest 지정](#341-deployment-manifest-지정)	
-		-	3.4.2. [Open PaaS Controller Deploy](#342-open-paas-controller-deploy)	
-	-	3.5. [설치형상 확인](#35-설치형상-확인)	
+1. [개요](#1-개요)
+        -       1.1. [문서 목적](#11-문서-목적)
+        -       1.2. [범위](#12-범위)
+        -       1.3. [참고자료](#13-참고자료)
+2. [Prerequisites](#2-prerequisites)
+        -       2.1. [개요](#21-개요)
+        -       2.2. [AWS](#22-aws)
+                -       2.2.1. [Dashboard(Console)](#221-dashboard(consol))
+                -       2.2.2. [Security Group](#222-security-group)
+        -       2.3. [Bosh Server 및 Bosh CLI](#23-bosh-server-및-bosh-cli)
+        -       2.4. [DNS Server](#24-dns-server)
+        -       2.5. [OP CLI](#25-op-cli)
+3. [Open PaaS Controller 설치](#3-open-paas-controller-설치)
+        -       3.1. [Release Upload](#31-release-upload)
+        -       3.2. [Stemcell Upload](#32-stemcell-upload)
+        -       3.3. [Deployment Manifest](#33-depoyment-manifest)
+                -       3.3.1. [Name & Release](#331-name-&-release)
+                -       3.3.2. [Networks](#332-networks)
+                -       3.3.3. [Compilation](#333-compilation)
+                -       3.3.4. [Resource Pools](#334-resource-pools)
+                -       3.3.5. [Update](#335-update)
+                -       3.3.6. [Jobs](#336-jobs)
+                -       3.3.7. [Properties](#337-properties)
+        -       3.4. [Bosh Deploy](#34-bosh-deploy)
+                -       3.4.1. [Deployment Manifest 지정](#341-deployment-manifest-지정)
+                -       3.4.2. [Open PaaS Controller Deploy](#342-open-paas-controller-deploy)
+        -       3.5. [설치형상 확인](#35-설치형상-확인)
 4. [설치 검증](#4-설치-검증)
-	-	4.1. [CF Login](#41-cf-login)
-	-	4.2. [Application Deploy](#42-application-deploy)
-	-	4.3. [Application Access](#43-application-access)
+        -       4.1. [CF Login](#41-cf-login)
+        -       4.2. [Application Deploy](#42-application-deploy)
+        -       4.3. [Application Access](#43-application-access)
 
 
 # 1. 개요
@@ -44,7 +44,7 @@
 
 
 ### 1.3. 참고자료
-http://docs.cloudfoundry.org/deploying/aws/  
+http://docs.cloudfoundry.org/deploying/aws/
 https://github.com/cloudfoundry/cf-release
 
 
@@ -57,7 +57,7 @@ Open PaaS Controller를 설치하기 전에 IaaS(AWS) 환경이 정상적으로 
 
 #### 2.2.1. Dashboard(Console)
 
-![controller_aws_image001]
+![../images/openpaas-controller/controller_aws_image001.jpeg]
 
 **[그림출처]: Open PaaS 사업단 개발환경**
 
@@ -66,11 +66,11 @@ AWS Dashboard(Console)으로 정상 접속되어야 하고, Open PaaS Controller
 #### 2.2.2. Security Group
 SSH, HTTP, HTTPS, DNS Protocol을 받을 수 있고, 모든 통신 Protocol을 엑세스 할 수 있도록 Security Group을 설정한다.(주의: 내부 네트워크 구간에서는 모든 Procotol이 사용 가능하도록 구성해야 한다.)
 
-![controller_aws_image002]
+![../images/openpaas-controller/controller_aws_image002.jpeg]
 
-![controller_aws_image003]
+![../images/openpaas-controller/controller_aws_image003.jpeg]
 
-![controller_aws_image004]
+![../images/openpaas-controller/controller_aws_image004.jpeg]
 
 ***PaaS-TA v2.0 이상의 버전에서는 다음을 참조하여 시큐리티 그룹을 설정한다.***
 [https://docs.cloudfoundry.org/deploying/openstack/security_group.html](https://docs.cloudfoundry.org/deploying/openstack/security_group.html)
@@ -78,7 +78,7 @@ SSH, HTTP, HTTPS, DNS Protocol을 받을 수 있고, 모든 통신 Protocol을 �
 
 #### 2.3. Bosh Server 및 Bosh CLI
 
-![controller_aws_image005]
+![../images/openpaas-controller/controller_aws_image005.png]
 
 [그림출처]: Open PaaS 사업단 개발환경
 
@@ -121,7 +121,7 @@ $TTL    604800
 
 NSLOOKUP 등으로 DNS Server에 Platform Domain이 정상 등록 되었는지 확인한다.
 
-![controller_aws_image006]
+![../images/openpaas-controller/controller_aws_image006.png]
 
 ### 2.5. OP CLI
 
@@ -133,13 +133,13 @@ Open PaaS 설치 패키지 내에 포함되어 있는 OP CLI 압축 파일을 �
 
 “cf” 명령어를 입력하면 아래와 같은 Help 화면이 출력됨을 확인한다.
 
-![controller_aws_image007]
- 
+![../images/openpaas-controller/controller_aws_image007.png]
+
 
 # 3. Open PaaS Controller 설치
 ### 3.1 Release Upload
 
-하단 링크로 접속하여 OpenPaaS Controller 릴리즈 파일인 openpaas-controller-1.0.tgz를 다운로드 한다. 
+하단 링크로 접속하여 OpenPaaS Controller 릴리즈 파일인 openpaas-controller-1.0.tgz를 다운로드 한다.
 
 >OpenPaaS-Controller : **<http://extdisk.hancom.com:8080/share.cgi?ssid=0v3Mo2B>**
 
@@ -149,7 +149,7 @@ Open PaaS 설치 패키지 내에 포함되어 있는 OP CLI 압축 파일을 �
 
 Release Upload는 상황에 따라 다소 차이는 있으나 보통 20-30분 정도 소요가 되며, 정상 Upload가 되면 아래의 그림과 같은 메시지가 출력된다.
 
-![controller_aws_image008]
+![../images/openpaas-controller/controller_aws_image008.png]
 
 [주의] Release Upload 과정에서 작업장비의 “/tmp” 폴더의 사이즈가 작을 경우 압축파일을 풀거나 묶을 때 에러가 발생할 수 있으므로, 10GB 이상 Free Size가 있는지를 확인해야 한다.
 
@@ -157,7 +157,7 @@ Bosh Sever에 Release가 정상적으로 Upload 되었는지는 “bosh releases
 
 `bosh releases`
 
-![controller_aws_image009]
+![../images/openpaas-controller/controller_aws_image009.png]
 
 ### 3.2 Stemcell Upload
 
@@ -171,15 +171,15 @@ Bosh Sever에 Release가 정상적으로 Upload 되었는지는 “bosh releases
 
 Stemcell Upload는 상황에 따라 다소 차이는 있으나 보통 5-10분 정도 소요가 되며, 정상 Upload가 되면 아래의 그림과 같은 메시지가 출력된다.
 
-![controller_aws_image010]
+![../images/openpaas-controller/controller_aws_image010.png]
 
 [주의] Stemcell Upload 과정에서 작업장비의 “/tmp” 폴더의 사이즈가 작을 경우 압축파일을 풀거나 묶을 때 에러가 발생할 수 있으므로, 10GB 이상 Free Size가 있는지를 확인해야 한다.
 
 Bosh Sever에 Stemcell이 정상적으로 Upload 되었는지는 “bosh stemcells” 명령으로 확인한다.
 
 `bosh stemcells`
- 
-![controller_aws_image011]
+
+![../images/openpaas-controller/controller_aws_image011.png]
 
 
 ### 3.3. Deployment Manifest
@@ -191,7 +191,7 @@ Bosh Sever에 Stemcell이 정상적으로 Upload 되었는지는 “bosh stemcel
 하단의 예시(3.3.1 ~ 3.3.7)를 참조하여 사용자의 설치환경에 적합하게 수정한다.
 
 #### 3.3.1. Name & Release
-```yml 
+```yml
 name: openpaas-controller   # Deployment Name
 director_uuid: 3d139c62-6669-4804-adb0-990b16446c37
 releases:               # BoshRelease Name
@@ -200,8 +200,8 @@ releases:               # BoshRelease Name
 ```
 Deployment Name은 설치자가 임의로 부여하는데, IaaS와 Version을 표시할 것을 권장한다. Bosh Director UUID는 “bosh status” 명령을 실행하면 출력되는 UUID 값을 넣고, Release Name과 Version은 “bosh releases” 명령의 결과로 나오는 값들을 입력하도록 한다.
 
-#### 3.3.2. Networks		
-```yml  
+#### 3.3.2. Networks
+```yml
 networks:
 - name: op_network     # Open PaaS Controller가 설치될 Network Name
   subnets:
@@ -226,7 +226,7 @@ networks:
 ```
 Network Name은 설치자가 임의로 부여 가능하다. Neutron Subnet ID, Gateway, DNS Server, Network CIDR은 AWS 구성을 직접 확인하거나 인프라 담당자에게 문의하여 정보를 얻도록 한다. Static IP 주소는 Open PaaS Controller를 설치할 때 개별 VM에 할당될 IP의 주소 대역으로 마찬가지로 인프라 담당자에게 할당을 받아야 한다.
 
-#### 3.3.3. Compilation	
+#### 3.3.3. Compilation
 ```yml
 compilation:
   cloud_properties:      # Compile용 VM의 사양
@@ -237,7 +237,7 @@ compilation:
 ```
 Network Name은 [**3.3.2 Networks**](#332-networks)에서 정의한 것과 동일한 이름을 줘야 한다. Workers는 동시에 Compile을 수행하는 VM의 개수로 별다른 환경적 특성이 없다면 Default 값을 사용토록 한다.
 
-#### 3.3.4. Resource Pools	
+#### 3.3.4. Resource Pools
 ```yml
 resource_pools:      # Resource Name
 - cloud_properties:
@@ -390,7 +390,7 @@ jobs:
       apps: op_network
     router:
       servers:
-        z1: 
+        z1:
         - 10.0.16.15    # Router IP 주소
   resource_pool: router
   templates:
@@ -533,7 +533,7 @@ jobs:
         - '*.login.controller.open-paas.com'
     uaa:
       proxy:
-        servers: 
+        servers:
         - 10.0.16.15
   resource_pool: medium
   templates:
@@ -653,7 +653,7 @@ jobs:
   name: hm9000
   networks:
   - name: op_network
-    #static_ips: 10.0.16.36     
+    #static_ips: 10.0.16.36
   properties:
     metron_agent:
       zone: z1
@@ -811,7 +811,7 @@ properties:
   acceptance_tests: null
   app_domains:
   - controller.open-paas.com      # DNS Server에 등록된 Platform Domain Name
-  app_ssh:            # App에 ssh 로 접근하기 위한 정보  
+  app_ssh:            # App에 ssh 로 접근하기 위한 정보
    host_key_fingerprint: 89:d3:73:01:f3:10:c4:a7:87:53:54:31:63:ee:ef:51
    oauth_client_id: ssh-proxy
   cc:           # 여기서부터 Cloud Controller Properties
@@ -1130,7 +1130,7 @@ properties:
      4PFVkjXsY1Ca5mC7mMu0+XSaALaNlXlJ7GuRmf+CU2sWCQOxGvp+
      -----END CERTIFICATE-----
     # Consul encrypt 키 값
-    encrypt_keys: 
+    encrypt_keys:
      - t66mLrBhJ5kpofLwoJpH5A==
     require_ssl: true    # Consul ssl 접속 여부
     # Consul server cert 키 값
@@ -1232,9 +1232,9 @@ properties:
     staging_disk_inode_limit: 200000
     staging_disk_limit_mb: 6144
     staging_memory_limit_mb: 1024
-  description: Open PaaS sponsored by OCP Team 
+  description: Open PaaS sponsored by OCP Team
   disk_quota_enabled: false
-  domain: controller.open-paas.com 
+  domain: controller.open-paas.com
   doppler:
     blacklisted_syslog_ranges: null
     debug: false
@@ -1257,7 +1257,7 @@ properties:
     require_ssl: false
   etcd_metrics_server:
     nats:
-      machines: 
+      machines:
       - 10.0.16.11             # NATS Server VM IP 주소
       password: admin
       username: nats
@@ -1319,7 +1319,7 @@ properties:
   nats:
     address: 10.0.16.11           # NATS Server VM IP 주소
     debug: false
-    machines: 
+    machines:
     - 10.0.16.11               # NATS Server VM IP 주소
     monitor_port: 4221
     password: admin
@@ -1482,8 +1482,8 @@ properties:
 `bosh deployment openpaas-controller-aws-1.0.yml`
 
 “bosh deployment” 명령어로 생성한 Deployment Manifest File을 지정하고, 아래의 그림과 같이 동일한 명령어로 정상 지정 되었는지를 확인한다.
- 
-![controller_aws_image012]
+
+![../images/openpaas-controller/controller_aws_image012.png]
 
 
 #### 3.4.2. Open PaaS Controller Deploy
@@ -1492,8 +1492,8 @@ properties:
 `bosh deploy`
 
 보통 설치 과정은 1-2시간 정도가 소요되며 정상적으로 설치가 완료되면 아래 그림과 같은 메세지를 출력하게 된다.
- 
-![controller_aws_image013]
+
+![../images/openpaas-controller/controller_aws_image013.png]
 
 
 ### 3.5. 설치형상 확인
@@ -1503,8 +1503,8 @@ properties:
 
 아래 그림과 같이 Deployment Name, Virtual Machine, IP 주소 등의 정보를 확인할 수 있다.
 
-![controller_aws_image014]
- 
+![../images/openpaas-controller/controller_aws_image014.png]
+
 # 4. 설치 검증
 ### 4.1. CF Login
 `$ cf api https://api.controller.open-paas.com –skip-ssl-validation`
@@ -1532,26 +1532,10 @@ Application을 Deploy할 ORG(Default: OCP)와 Space를 생성하고, 해당하�
 
 Application이 정상 Deploy가 되면 아래와 같은 메시지가 출력된다.
 
-![controller_aws_image015]
+![../images/openpaas-controller/controller_aws_image015.png]
 
 ### 4.3. Application Access
 Deploy한 Application URL을 Browser 또는 curl 명령어로 Access하여 정상 접근 되는지를 확인한다.
 
-![controller_aws_image016]
+![../images/openpaas-controller/controller_aws_image016.png]
 
-[controller_aws_image001]:/images/openpaas-controller/controller_aws_image001.jpeg
-[controller_aws_image002]:/images/openpaas-controller/controller_aws_image002.jpeg
-[controller_aws_image003]:/images/openpaas-controller/controller_aws_image003.jpeg
-[controller_aws_image004]:/images/openpaas-controller/controller_aws_image004.jpeg
-[controller_aws_image005]:/images/openpaas-controller/controller_aws_image005.png
-[controller_aws_image006]:/images/openpaas-controller/controller_aws_image006.png
-[controller_aws_image007]:/images/openpaas-controller/controller_aws_image007.png
-[controller_aws_image008]:/images/openpaas-controller/controller_aws_image008.png
-[controller_aws_image009]:/images/openpaas-controller/controller_aws_image009.png
-[controller_aws_image010]:/images/openpaas-controller/controller_aws_image010.png
-[controller_aws_image011]:/images/openpaas-controller/controller_aws_image011.png
-[controller_aws_image012]:/images/openpaas-controller/controller_aws_image012.png
-[controller_aws_image013]:/images/openpaas-controller/controller_aws_image013.png
-[controller_aws_image014]:/images/openpaas-controller/controller_aws_image014.png
-[controller_aws_image015]:/images/openpaas-controller/controller_aws_image015.png
-[controller_aws_image016]:/images/openpaas-controller/controller_aws_image016.png

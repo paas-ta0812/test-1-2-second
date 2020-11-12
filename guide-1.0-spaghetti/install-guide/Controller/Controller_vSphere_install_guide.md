@@ -1,35 +1,35 @@
 # Table of Contents
 
-1. [개요](#1-개요)	
-	-	1.1. [문서 목적](#11-문서-목적)	
-	-	1.2. [범위](#12-범위)	
-	-	1.3. [참고자료](#13-참고자료)	
-2. [Prerequisites](#2-prerequisites)	
-	-	2.1. [개요](#21-개요)		
-	-	2.2. [vSphere](#22-vsphere)	
-	    -   2.2.1. [데이터센터/클러스터/리소스풀](#221-데이터센터클러스터리소스풀)
-	-	2.3. [Bosh Server 및 Bosh CLI](#23-bosh-server-및-bosh-cli)	
-	-	2.4. [DNS Server](#24-dns-server)	
-	-	2.5. [OP CLI](#25-op-cli)	
-3. [Open PaaS Controller 설치](#3-open-paas-controller-설치)	
-	-	3.1. [Release Upload](#31-release-upload)	
-	-	3.2. [Stemcell Upload](#32-stemcell-upload)		
-	-	3.3. [Deployment Manifest](#33-depoyment-manifest)	
-		-	3.3.1. [Name & Release](#331-name-&-release)		
-		-	3.3.2. [Networks](#332-networks)	
-		-	3.3.3. [Compilation](#333-compilation)	
-		-	3.3.4. [Resource Pools](#334-resource-pools)	
-		-	3.3.5. [Update](#335-update)	
-		-	3.3.6. [Jobs](#336-jobs)	
-		-	3.3.7. [Properties](#337-properties)	
-	-	3.4. [Bosh Deploy](#34-bosh-deploy)		
-		-	3.4.1. [Deployment Manifest 지정](#341-deployment-manifest-지정)	
-		-	3.4.2. [Open PaaS Controller Deploy](#342-open-paas-controller-deploy)	
-	-	3.5. [설치형상 확인](#35-설치형상-확인)	
+1. [개요](#1-개요)
+        -       1.1. [문서 목적](#11-문서-목적)
+        -       1.2. [범위](#12-범위)
+        -       1.3. [참고자료](#13-참고자료)
+2. [Prerequisites](#2-prerequisites)
+        -       2.1. [개요](#21-개요)
+        -       2.2. [vSphere](#22-vsphere)
+            -   2.2.1. [데이터센터/클러스터/리소스풀](#221-데이터센터클러스터리소스풀)
+        -       2.3. [Bosh Server 및 Bosh CLI](#23-bosh-server-및-bosh-cli)
+        -       2.4. [DNS Server](#24-dns-server)
+        -       2.5. [OP CLI](#25-op-cli)
+3. [Open PaaS Controller 설치](#3-open-paas-controller-설치)
+        -       3.1. [Release Upload](#31-release-upload)
+        -       3.2. [Stemcell Upload](#32-stemcell-upload)
+        -       3.3. [Deployment Manifest](#33-depoyment-manifest)
+                -       3.3.1. [Name & Release](#331-name-&-release)
+                -       3.3.2. [Networks](#332-networks)
+                -       3.3.3. [Compilation](#333-compilation)
+                -       3.3.4. [Resource Pools](#334-resource-pools)
+                -       3.3.5. [Update](#335-update)
+                -       3.3.6. [Jobs](#336-jobs)
+                -       3.3.7. [Properties](#337-properties)
+        -       3.4. [Bosh Deploy](#34-bosh-deploy)
+                -       3.4.1. [Deployment Manifest 지정](#341-deployment-manifest-지정)
+                -       3.4.2. [Open PaaS Controller Deploy](#342-open-paas-controller-deploy)
+        -       3.5. [설치형상 확인](#35-설치형상-확인)
 4. [설치 검증](#4-설치-검증)
-	-	4.1. [CF Login](#41-cf-login)
-	-	4.2. [Application Deploy](#42-application-deploy)
-	-	4.3. [Application Access](#43-application-access)
+        -       4.1. [CF Login](#41-cf-login)
+        -       4.2. [Application Deploy](#42-application-deploy)
+        -       4.3. [Application Access](#43-application-access)
 
 
 
@@ -41,7 +41,7 @@
 본 문서의 범위는 개방형클라우드플랫폼을 vSphere에 설치하기 데 대한 내용으로 한정되어 있다. OpenStack/AWS와 같은 다른 IaaS 환경에서의 설치는 그에 맞는 가이드 문서를 참고해야 하며, Inception/Bosh 설치 또한 해당 가이드 문서를 별도로 참조해야 한다.
 
 ### 1.3. 참고 자료
-[**http://docs.cloudfoundry.org/deploying/vsphere/**](http://docs.cloudfoundry.org/deploying/vsphere/)  
+[**http://docs.cloudfoundry.org/deploying/vsphere/**](http://docs.cloudfoundry.org/deploying/vsphere/)
 [**https://github.com/cloudfoundry/cf-release**](https://github.com/cloudfoundry/cf-release)
 
 # 2. Prerequisites
@@ -51,7 +51,7 @@
 ### 2.2. vSphere
 #### 2.2.1. 데이터센터/클러스터/리소스풀
 
-![controller_vsphere_image002]
+![../images/openpaas-controller/controller_vsphere_image002.png]
 
 **[그림출처]: Open PaaS 사업단 개발환경**
 
@@ -59,7 +59,7 @@
 
 ### 2.3. Bosh Server 및 Bosh CLI
 
-![controller_vsphere_image003]
+![../images/openpaas-controller/controller_vsphere_image003.png]
 
 **[그림출처]: Open PaaS 사업단 개발환경**
 
@@ -96,7 +96,7 @@ $TTL    604800
 
 NSLOOKUP 등으로 DNS Server에 Platform Domain이 정상 등록 되었는지 확인한다.
 
-![controller_vsphere_image004]
+![../images/openpaas-controller/controller_vsphere_image004.png]
 
 ### 2.5. OP CLI
 Open PaaS 설치 패키지 내에 포함되어 있는 OP CLI 압축 파일을 풀고 명령어 Path Folder에 실행 파일을 복사한다.
@@ -107,13 +107,13 @@ Open PaaS 설치 패키지 내에 포함되어 있는 OP CLI 압축 파일을 �
 
 “cf” 명령어를 입력하면 아래와 같은 Help 화면이 출력됨을 확인한다.
 
-![controller_vsphere_image005]
+![../images/openpaas-controller/controller_vsphere_image005.png]
 
 # 3. Open PaaS Controller 설치
 
 ### 3.1. Release Upload
 
-하단 링크로 접속하여 OpenPaaS Controller 릴리즈 파일인 openpaas-controller-1.0.tgz를 다운로드 한다. 
+하단 링크로 접속하여 OpenPaaS Controller 릴리즈 파일인 openpaas-controller-1.0.tgz를 다운로드 한다.
 
 >OpenPaaS-Controller : **<http://extdisk.hancom.com:8080/share.cgi?ssid=0v3Mo2B>**
 
@@ -123,14 +123,14 @@ Open PaaS 설치 패키지 내에 포함되어 있는 OP CLI 압축 파일을 �
 
 Release Upload는 상황에 따라 다소 차이는 있으나 보통 20-30분 정도 소요가 되며, 정상 Upload가 되면 아래의 그림과 같은 메시지가 출력된다.
 
-![controller_vsphere_image006]
+![../images/openpaas-controller/controller_vsphere_image006.png]
 
 [주의] Release Upload 과정에서 작업장비의 “/tmp” 폴더의 사이즈가 작을 경우 압축파일을 풀거나 묶을 때 에러가 발생할 수 있으므로, 10GB 이상 Free Size가 있는지를 확인해야 한다.
 
 Bosh Sever에 Release가 정상적으로 Upload 되었는지는 “bosh releases” 명령으로 확인한다.<br>
 `$ bosh releases`
 
-![controller_vsphere_image007] 
+![../images/openpaas-controller/controller_vsphere_image007.png]
 
 ### 3.2. Stemcell Upload
 
@@ -144,14 +144,14 @@ Bosh Sever에 Release가 정상적으로 Upload 되었는지는 “bosh releases
 
 Stemcell Upload는 상황에 따라 다소 차이는 있으나 보통 5-10분 정도 소요가 되며, 정상 Upload가 되면 아래의 그림과 같은 메시지가 출력된다.
 
-![controller_vsphere_image008]
+![../images/openpaas-controller/controller_vsphere_image008.png]
 
 [주의] Stemcell Upload 과정에서 작업장비의 “/tmp” 폴더의 사이즈가 작을 경우 압축파일을 풀거나 묶을 때 에러가 발생할 수 있으므로, 10GB 이상 Free Size가 있는지를 확인해야 한다.
 
 Bosh Sever에 Stemcell이 정상적으로 Upload 되었는지는 “bosh stemcells” 명령으로 확인한다.
 `$ bosh stemcells`
 
-![controller_vsphere_image009]    
+![../images/openpaas-controller/controller_vsphere_image009.png]
 
 ### 3.3. Deployment Manifest
 
@@ -246,7 +246,7 @@ resource_pools:
   name: large                                          # Resource Name
   network: op_network                                  # Network Name
   stemcell:
-    name: bosh-vsphere-esxi-ubuntu-trusty-go_agent     # Stemcell Name 
+    name: bosh-vsphere-esxi-ubuntu-trusty-go_agent     # Stemcell Name
     version: 3147                                      # Stemcell Version
 
 - cloud_properties:
@@ -310,7 +310,7 @@ update:
   canaries: 1
   canary_watch_time: 30000-600000
   max_in_flight: 1
-  serial: true	                    # VM의 순차적 Update
+  serial: true                      # VM의 순차적 Update
   update_watch_time: 5000-600000
 ```
 Default 값들을 수정 없이 사용한다.
@@ -342,7 +342,7 @@ jobs:
   update:
     max_in_flight: 1
     serial: true
-    
+
 - name: ha_proxy
   instances: 1
   networks:
@@ -392,7 +392,7 @@ jobs:
       apps: op_network
     router:
       servers:
-        z1: 
+        z1:
         - 10.30.40.15                       # Router IP 주소
   resource_pool: router
   templates:
@@ -535,7 +535,7 @@ jobs:
         - '*.login.controller.open-paas.com'
     uaa:
       proxy:
-        servers: 
+        servers:
         - 10.30.40.15
   resource_pool: medium
   templates:
@@ -635,7 +635,7 @@ jobs:
     networks:
       apps: op_network
     nfs_server:
-      address: 10.30.40.12               # NFS Server IP 주소 
+      address: 10.30.40.12               # NFS Server IP 주소
       allow_from_entries:
       - 10.30.0.0/16                     # 허용 Network CIDR 값
       share: null
@@ -1121,7 +1121,7 @@ properties:
      4PFVkjXsY1Ca5mC7mMu0+XSaALaNlXlJ7GuRmf+CU2sWCQOxGvp+
      -----END CERTIFICATE-----
     # Consul encrypt 키 값
-    encrypt_keys: 
+    encrypt_keys:
      - t66mLrBhJ5kpofLwoJpH5A==
     require_ssl: true      # Consul ssl 접속 여부
     # Consul server cert 키 값
@@ -1223,9 +1223,9 @@ properties:
     staging_disk_inode_limit: 200000
     staging_disk_limit_mb: 6144
     staging_memory_limit_mb: 1024
-  description: Open PaaS sponsored by OCP Team 
+  description: Open PaaS sponsored by OCP Team
   disk_quota_enabled: false
-  domain: controller.open-paas.com 
+  domain: controller.open-paas.com
   doppler:
     blacklisted_syslog_ranges: null
     debug: false
@@ -1249,7 +1249,7 @@ properties:
     require_ssl: false
   etcd_metrics_server:
     nats:
-      machines: 
+      machines:
       - 10.30.40.11                # NATS Server VM IP 주소
       password: admin
       username: nats
@@ -1311,7 +1311,7 @@ properties:
   nats:
     address: 10.30.40.11
     debug: false
-    machines: 
+    machines:
     - 10.30.40.11
     monitor_port: 4221
     password: admin
@@ -1474,8 +1474,8 @@ properties:
 
 “bosh deployment” 명령어로 생성한 Deployment Manifest File을 지정하고, 아래의 그림과 같이 동일한 명령어로 정상 지정 되었는지를 확인한다.
 
-![controller_vsphere_image010]
- 
+![../images/openpaas-controller/controller_vsphere_image010.png]
+
 #### 3.4.2. Open PaaS Controller Deploy
 “bosh deploy” 명령으로 Open PaaS Controller 설치를 수행한다.
 
@@ -1483,7 +1483,7 @@ properties:
 
 보통 설치 과정은 1-2시간 정도가 소요되며 정상적으로 설치가 완료되면 아래 그림과 같은 메세지를 출력하게 된다.
 
-![controller_vsphere_image011]
+![../images/openpaas-controller/controller_vsphere_image011.png]
 
 ### 3.5. 설치형상 확인
 설치가 정상적으로 완료된 후 “bosh vms” 명령으로 설치된 Open PaaS Controller의 형상을 확인한다.
@@ -1492,7 +1492,7 @@ properties:
 
 아래 그림과 같이 Deployment Name, Virtual Machine, IP 주소 등의 정보를 확인할 수 있다.
 
-![controller_vsphere_image012]
+![../images/openpaas-controller/controller_vsphere_image012.png]
 
 # 4. 설치 검증
 ### 4.1. CF Login
@@ -1521,24 +1521,10 @@ Application을 Deploy할 ORG(Default: OCP)와 Space를 생성하고, 해당하�
 
 Application이 정상 Deploy가 되면 아래와 같은 메시지가 출력된다.
 
-![controller_vsphere_image013]
+![../images/openpaas-controller/controller_vsphere_image013.png]
 
 ### 4.3. Application Access
 Deploy한 Application URL을 Browser 또는 curl 명령어로 Access하여 정상 접근 되는지를 확인한다.
 
-![controller_vsphere_image014]
-
-[controller_vsphere_image002]:/images/openpaas-controller/controller_vsphere_image002.png
-[controller_vsphere_image003]:/images/openpaas-controller/controller_vsphere_image003.png
-[controller_vsphere_image004]:/images/openpaas-controller/controller_vsphere_image004.png
-[controller_vsphere_image005]:/images/openpaas-controller/controller_vsphere_image005.png
-[controller_vsphere_image006]:/images/openpaas-controller/controller_vsphere_image006.png
-[controller_vsphere_image007]:/images/openpaas-controller/controller_vsphere_image007.png
-[controller_vsphere_image008]:/images/openpaas-controller/controller_vsphere_image008.png
-[controller_vsphere_image009]:/images/openpaas-controller/controller_vsphere_image009.png
-[controller_vsphere_image010]:/images/openpaas-controller/controller_vsphere_image010.png
-[controller_vsphere_image011]:/images/openpaas-controller/controller_vsphere_image011.png
-[controller_vsphere_image012]:/images/openpaas-controller/controller_vsphere_image012.png
-[controller_vsphere_image013]:/images/openpaas-controller/controller_vsphere_image013.png
-[controller_vsphere_image014]:/images/openpaas-controller/controller_vsphere_image014.png
+![../images/openpaas-controller/controller_vsphere_image014.png]
 
