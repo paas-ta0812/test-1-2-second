@@ -65,7 +65,7 @@
 
 ### <a name="7"/>2.1. 시스템 구성도
 도로명 주소 서비스(API)를 만들고 이 서비스를 API 플랫폼에 등록합니다. 그리고 일반 개발자는 도로명 주소 서비스를 “개방형 클라우드 플랫폼”에서 신청하여 사용합니다.
->![./../images/openpaas-application-apiplatform-dorojuso/api_platform_dorojuso_01.png]
+!(./../images/openpaas-application-apiplatform-dorojuso/api_platform_dorojuso_01.png
 
 그림. 도로명 주소 검색 서비스 시스템 구성도
 
