@@ -74,7 +74,7 @@ Node.js 애플리케이션 개발을 위해 다음과 같은 환경으로 개발
 
 https://nodejs.org/dist/v0.12.4/x64/node-v0.12.4-x64.msi
 
-![](./../image/nodejs/2-2-1-0.png)
+![](./image/nodejs/2-2-1-0.png)
 
 ##### 2. Node.js 설치
 
