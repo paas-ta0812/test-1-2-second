@@ -202,9 +202,6 @@ Deployment Manifest /home/inception/crossent-deploy/paasta-logsearch.yml
 
 $ bosh stemcells
 
-```text
-
-```
 
 RSA 1024 bit CA certificates are loaded due to old openssl compatibility Acting as user 'admin' on 'bosh'
 

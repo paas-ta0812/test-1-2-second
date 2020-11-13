@@ -1585,8 +1585,10 @@ resource_pools:                               # 배포시 사용하는 resource 
 * MySQL 서비스팩을 배포한다.
 
 > $ bosh deploy
->  ※ 40분 ~ 1시간 정도 소요된다. 
-![](../images/mysql/update_mysql_vsphere_49.png) 
+>  ※ 40분 ~ 1시간 정도 소요된다.
+
+![](../images/mysql/update_mysql_vsphere_49.png)
+
 ![](../images/mysql/update_mysql_vsphere_50.png)
 
 * 배포된 MySQL 서비스팩을 확인한다.
