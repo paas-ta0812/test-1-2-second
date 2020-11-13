@@ -74,53 +74,53 @@ Node.js 애플리케이션 개발을 위해 다음과 같은 환경으로 개발
 
 https://nodejs.org/dist/v0.12.4/x64/node-v0.12.4-x64.msi
 
-<img src=“./image/nodejs/2-2-1-0.png>
+<img src=“./image/nodejs/2-2-1-0.png \>
 
 ##### 2. Node.js 설치
 
 - 다운받은 폴더에서 node-v0.12.4-x64.msi를 더블클릭하여 설치를 시작한다.
 
-<img src=“./image/nodejs/2-2-1-1.png>
+<img src=“./image/nodejs/2-2-1-1.png \>
 
 - "실행"버튼을 클릭하여 계속 진행한다.
 
-<img src=“./image/nodejs/2-2-1-2.png>
+<img src=“./image/nodejs/2-2-1-2.png \>
 
 - "Next"버튼을 클릭하여 계속 진행한다.
 
-<img src=“./image/nodejs/2-2-1-3.png>
+<img src=“./image/nodejs/2-2-1-3.png \>
 
 - "I accept the terms in the License Agreement"를 체크하여 라이센스에 동의한 후 "Next"버튼을 클릭하여 계속 진행한다.
 
-<img src=“./image/nodejs/2-2-1-4.png>
+<img src=“./image/nodejs/2-2-1-4.png \>
 
 - 설치경로를 입력 혹은 선택한 후 "Next"버튼을 클릭하여 계속 진행한다.
 여기서는 C:\Program Files\nodejs\ 를 설치경로로 설정하였다.
 
-<img src=“./image/nodejs/2-2-1-5.png>
+<img src=“./image/nodejs/2-2-1-5.png \>
 
 - 설치할 항목을 선택한 후 "Next"버튼을 클릭하여 계속 진행한다.
 여기서는 선택하여 Node.js, npm, doc을 설치하고 환경변수 PATH까지 추가하였다.
 
-<img src=“./image/nodejs/2-2-1-6.png>
+<img src=“./image/nodejs/2-2-1-6.png \>
 
 - "Install"버튼을 클릭하여 설치한다.
 
-<img src=“./image/nodejs/2-2-1-7.png>
+<img src=“./image/nodejs/2-2-1-7.png \>
 
 - "Finish"버튼을 클릭하여 설치를 완료한다.
 
-<img src=“./image/nodejs/2-2-1-8.png>
+<img src=“./image/nodejs/2-2-1-8.png \>
 
 - '윈도우키+R' 또는 '시작->실행'아이콘을 클릭하여 실행창을 띄운 후 'cmd'를 입력하고 "확인"버튼을 눌러 커맨드창을 연다.
 
-<img src=“./image/nodejs/2-2-1-9.png>
+<img src=“./image/nodejs/2-2-1-9.png \>
 
 - 커맨드창에 아래의 명령어를 입력하여 node.js와 npm의 버젼과 제대로 설치되었는지 여부를 확인한다.
 
 ><div>>node -v
 ><div>>npm -v
-<img src=“./image/nodejs/2-2-1-10.png>
+<img src=“./image/nodejs/2-2-1-10.png \>
 
 개발도구
 Node.js는 javascript기반의 언어로 Notepad++, Sublim Text, EditPlus등 문서편집기를 개발도구로 사용할 수 있다. 또한 Eclipse의 플러그인 Nodeclipse를 설치하여 사용할 수도있다.
@@ -137,19 +137,19 @@ Node.js는 javascript기반의 언어로 Notepad++, Sublim Text, EditPlus등 문
 - 커맨드 창에서 개발을 진행할 경로로 이동후 아래의 명령어를 입력하여 'express-generator' npm을 설치한다.
 
 ><div>>npm install express-generator
-<img src=“./image/nodejs/./images/nodejs/2-3-1-0.png>
+<img src=“./image/nodejs/./images/nodejs/2-3-1-0.png \>
 
 - Express 애플리케이션을 생성한다. '-e'옵션은 view enjine을 ejs를 사용한다는 것이고 default view enjin은 jade이다.
 
 ><div>>.\node_modules\.bin\express -e
-<img src=“./image/nodejs/./images/nodejs/2-3-1-1.png>
+<img src=“./image/nodejs/./images/nodejs/2-3-1-1.png \>
 
 ##### 2. npm 설치
 
 - Express 애플리케이션에 기본적으로 포함되어있는 npm을 설치한다. 설치할 npm에 대한 정의는 package.json에 정의되어있다.
 
 ><div>>npm install
-<img src=“./image/nodejs/./images/nodejs/2-3-1-2.png>
+<img src=“./image/nodejs/./images/nodejs/2-3-1-2.png \>
 
 ##### 3. Node.js Express 어플리캐이션 실행
 
@@ -157,12 +157,12 @@ Node.js는 javascript기반의 언어로 Notepad++, Sublim Text, EditPlus등 문
 
 ><div>>npm start
 ><div>>node bin/www
-<img src=“./image/nodejs/./images/nodejs/2-3-1-3.png>
+<img src=“./image/nodejs/./images/nodejs/2-3-1-3.png \>
 
 - 브라우저로 아래의 주소로 접속하여 애플리케이션이 제대로 동작하는지 확인한다.
 
 ><div>http://localhost:3000/
-<img src=“./image/nodejs/./images/nodejs/2-3-1-4.png>
+<img src=“./image/nodejs/./images/nodejs/2-3-1-4.png \>
 
 
 ### <div id='9'> 3.2. Node.js 샘플 애플리케이션
@@ -178,11 +178,11 @@ Node.js는 javascript기반의 언어로 Notepad++, Sublim Text, EditPlus등 문
 - 다운받은 경로아래에 Node.js 샘플 애플리케이션 경로로 이동한다.
 
 ><div>>cd node-sample-app
-<img src=“./image/nodejs/2-3-2-0.png>
+<img src=“./image/nodejs/2-3-2-0.png \>
 
 ##### 3. Node.js 샘플 애플리케이션 디렉토리구조
 
-<img src=“./image/nodejs/2-3-2-1.png>
+<img src=“./image/nodejs/2-3-2-1.png \>
 
 <table>
   <tr>
@@ -953,7 +953,7 @@ module.exports = client;
 ># cf api [target url]
 >$ cf login -u testUser -o sample_test -s sample_space # 로그인 요청<br>
 ># cf login –u [user name] –o [org name] –s [space name]
-<img src=“./image/nodejs/2-4-1-0.png>
+<img src=“./image/nodejs/2-4-1-0.png \>
 
 
 ### <div id='20'> 4.2.  서비스 생성
@@ -967,7 +967,7 @@ module.exports = client;
 ><div>$ cf create-service redis-sb shared-vm node-redis
 ><div>$ cf create-service glusterfs glusterfs-5Mb node-glusterfs
 ><div>$ cf create-service p-rabbitmq standard node-rabbitmq
-<img src=“./image/nodejs/2-4-2-0.png>
+<img src=“./image/nodejs/2-4-2-0.png \>
 
 
 ### <div id='21'> 4.3. 애플리케이션 배포
@@ -1036,7 +1036,7 @@ ON DELETE CASCADE;
 - cf push 명령으로 배포한다. 별도의 값을 넣지않으면 manifest.yml의 설정을 사용한다. 아직 서비스를 연결하지 않았기 때문에 --no-start 옵션으로 배포후 실행은 하지않는다.
 
 ><div>$ cf push --no-start
-<img src=“./image/nodejs/2-4-3-0.png>
+<img src=“./image/nodejs/2-4-3-0.png \>
 
 
 ### <div id='22'> 4.4. 애플리케이션, 서비스 연결
@@ -1052,12 +1052,12 @@ ON DELETE CASCADE;
 ><div>$ cf bind-service node-sample-app node-redis
 ><div>$ cf bind-service node-sample-app node-glusterfs
 ><div>$ cf bind-service node-sample-app node-rabbitmq
-<img src=“./image/nodejs/2-4-4-0.png>
+<img src=“./image/nodejs/2-4-4-0.png \>
 
 연결확인
 
 ><div>$ cf services
-<img src=“./image/nodejs/2-4-4-1.png>
+<img src=“./image/nodejs/2-4-4-1.png \>
 
 
 ### <div id='23'> 4.5. 애플리케이션 실행
@@ -1065,7 +1065,7 @@ ON DELETE CASCADE;
 서비스 바인드 과정을 통해 생성된 접속정보 환경변수를 가지고 어플리케이션이 실행된다.
 
 ><div>$ cf start node-sample-app
-<img src=“./image/nodejs/2-4-5-0.png>
+<img src=“./image/nodejs/2-4-5-0.png \>
 
 
 # <div id='24'> 5. 테스트
@@ -1093,6 +1093,6 @@ test:
 2.2.  리눅스
 
 ><div>$ make test
-<img src=“./image/nodejs/2-5-0-0.png>
+<img src=“./image/nodejs/2-5-0-0.png \>
 
 
